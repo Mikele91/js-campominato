@@ -149,16 +149,16 @@ function(){
 var clickP =[];
 document.addEventListener("click",
 function(event){
-    let i = (event.target.innerHTML);
-    if(!clickP.includes(parseInt(i))){
+    var i = (event.target.innerHTML);
+        if(!clickP.includes(parseInt(i))){
         
-        clickP.push(i);
-    }else
+    clickP.push(parseInt(i));
+        return clickP;
+        }
 
-    return clickP
-}
-)
-console.log(clickP);
+    }
+    )
+    console.log(clickP);
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
 // Al termine della partita il software deve comunicare il punteggio.
