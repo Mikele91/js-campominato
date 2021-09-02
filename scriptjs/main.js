@@ -150,7 +150,7 @@ var clickP =[];
 document.addEventListener("click",
 function(event){
     let i = (event.target.innerHTML);
-    if(clickP !== parseInt(i)){
+    if(!clickP.includes(parseInt(i))){
         
         clickP.push(i);
     }else
