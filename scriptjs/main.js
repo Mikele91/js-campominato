@@ -47,8 +47,30 @@ function numeroRandom(min, max){
         return random;
 }
 
-for( var i =1; i <= 16; i++ ){
-    var bombe = numeroRandom(1, 100);
+
+
+//funzione includs
+// dato l'arrey e l'elemento da cercare, da true se l'elemento è presente altrimenti è falso 
+function inArrey(arrey, elem){ 
+    let cont = 0;
+    let trovato = false;
+    while(cont < arrey.length && trovato == false){
+        if(arrey[cont] == elem){
+             trovato == true; //oppure direttamente return true  e sotto return false senza creare variabile trovato
+        }
+        cont++;
+
+    }
+     return trovato; //return false
+}
+var bombe =[];
+
+while( bombe.length < 16  ){
+    var numeroGenerato = numeroRandom(1, 100)
+    if( !inArrey(bombe, numeroGenerato)){   //oppure bombe.includes(numeroGenerato)
+
+        bombe.push(numeroGenerato);
+    }
 }
 console.log(bombe);
 // I numeri non possono essere duplicati.
