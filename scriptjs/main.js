@@ -94,6 +94,16 @@ function(){
 
     //prendo i dati dal select per impostare il campo 
     var livello = document.getElementById("livello").value
+
+    if(livello = "0"){
+        livello = 100;
+    }else if (livello = "1"){
+        livello = 80;
+    }else{
+        livello = 50;
+    }
+
+    
     console.log(livello)
 
     // CreaQuadrato()
