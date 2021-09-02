@@ -144,21 +144,28 @@ function(){
 }
 )           
 
-
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
+var campo = document.getElementById("campo");
 var clickP =[];
-document.addEventListener("click",
-function(event){
-    var i = (event.target.innerHTML);
+console.log(clickP);
+
+campo.addEventListener("click",
+function (event){
+    var i = parseInt((event.target.innerHTML));
         if(!clickP.includes(parseInt(i))){
         
-    clickP.push(parseInt(i));
-        return clickP;
+        clickP.push(parseInt(i));   
+        }else{
+        
+        // return clickP;
         }
-
+        
     }
-    )
-    console.log(clickP);
+    );
+
+    console.log(" il punteggio ", clickP);
+    
+    
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
 // Al termine della partita il software deve comunicare il punteggio.
