@@ -3,13 +3,24 @@
     padding: 0;
     box-sizing:border-box ;
 }
-#campo{
+.campo1{
     display: flex;
     flex-wrap: wrap;
     width: 1000px;
     margin: auto;
 }
-
+.campo2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    margin: auto;
+}
+.campo3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    margin: auto;
+}
 .quadrato{
     background-color: green;
     border: 1px solid black;

@@ -98,12 +98,26 @@ function(){
     if(livello == "0"){
 
         CreaQuadrato(100);
+        document.getElementById("campo").classList.remove("campo2");
+        document.getElementById("campo").classList.remove("campo3");
+        document.getElementById("campo").classList.add("campo1");
+
     }else if (livello == "1"){
 
         CreaQuadrato(81);
+        document.getElementById("campo").classList.remove("campo1");
+        document.getElementById("campo").classList.remove("campo3");
+        document.getElementById("campo").classList.add("campo2");
+
 
     }else{
         CreaQuadrato(49);
+        document.getElementById("campo").classList.remove("campo1");
+        document.getElementById("campo").classList.remove("campo2");
+        document.getElementById("campo").classList.add("campo3");
+
+
+
     }
 
     
