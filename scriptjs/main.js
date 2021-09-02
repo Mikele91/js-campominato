@@ -146,7 +146,7 @@ function(){
 
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
 var campo = document.getElementById("campo");
-var clickP =[q];
+var clickP =[];
 console.log(clickP);
 
 campo.addEventListener("click",
