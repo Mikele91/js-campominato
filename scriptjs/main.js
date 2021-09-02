@@ -125,7 +125,7 @@ function(){
 
     console.log(" livello difficolta " , livello)
 }
-)
+);
 
 
 var btRefresh = document.getElementById("refresh");
@@ -152,6 +152,12 @@ console.log(clickP);
 campo.addEventListener("click",
 function (event){
     var i = parseInt((event.target.innerHTML));
+
+    // se è una bomba bomb.includes(i)
+    // alert() clickP.length
+    // se è una casella già cliccata clickP.includes(i)
+    // altrimenti lo aggiungo all'array clickP
+    // clickP.length == possibilita hai vintoooooo
     if(!clickP.includes(parseInt(i))){
         
         clickP.push(parseInt(i));   
@@ -163,9 +169,6 @@ function (event){
         console.log(" il punteggio ", clickP);
     }
     );
-
-    
-    
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
 // Al termine della partita il software deve comunicare il punteggio.
