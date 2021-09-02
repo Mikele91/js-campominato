@@ -51,18 +51,18 @@ function numeroRandom(min, max){
 
 //FUNZIONI
 // INCLUDS
-function inArrey(arrey, elem){ 
-    let cont = 0;
-    let trovato = false;
-    while(cont < arrey.length && trovato == false){
-        if(arrey[cont] == elem){
-             trovato == true; //oppure direttamente return true  e sotto return false senza creare variabile trovato
-        }
-        cont++;
+// function inArrey(arrey, elem){ 
+//     let cont = 0;
+//     let trovato = false;
+//     while(cont < arrey.length && trovato == false){
+//         if(arrey[cont] == elem){
+//              trovato == true; //oppure direttamente return true  e sotto return false senza creare variabile trovato
+//         }
+//         cont++;
 
-    }
-     return trovato; //return false
-}
+//     }
+//      return trovato; //return false
+// }
 
 // GENERA QUADRATI 
 function CreaQuadrato(numero){
@@ -73,17 +73,20 @@ function CreaQuadrato(numero){
 }
 
 let btnGenera = document.getElementById("genera");
+// var btRefresh = document.getElementById("refresh");
+
 
 btnGenera.addEventListener("click",
 function(){
 
-
+    document.getElementById("campo").innerHTML = "";
     var bombe =[];
 
     // I numeri non possono essere duplicati.
     while( bombe.length < 16  ){
-        var numeroGenerato = numeroRandom(1, 100)
-        if( !inArrey(bombe, numeroGenerato)){   //oppure bombe.includes(numeroGenerato)
+        var numeroGenerato = numeroRandom(1, 100);
+        if(!bombe.includes(numeroGenerato) ){   
+
 
             bombe.push(numeroGenerato);
         }
@@ -120,13 +123,42 @@ function(){
 
     }
 
-    
-    console.log(livello)
-
-    // CreaQuadrato()
+    console.log(" livello difficolta " , livello)
 }
 )
+
+
+var btRefresh = document.getElementById("refresh");
+
+btRefresh.addEventListener("click",
+function(){
+
+    // pulire i campi o refresh
+    document.getElementById("campo").innerHTML = "";
+    //  document.getElementById("campo").classList.remove("campo1", "campo2", "campo3");
+
+    // resetto i campi (copiato da biglietto )
+    // var nome = document.getElementById("nome").value = " ";
+    // var km = parseInt( document.getElementById("km").value = " ") ;
+    // var fasciaEta = document.getElementById("fascia").selectedIndex = "0" ;
+}
+)           
+
+
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
+var clickP =[];
+document.addEventListener("click",
+function(event){
+    let i = (event.target.innerHTML);
+    if(clickP !== parseInt(i)){
+        
+        clickP.push(i);
+    }else
+
+    return clickP
+}
+)
+console.log(clickP);
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
 // Al termine della partita il software deve comunicare il punteggio.
