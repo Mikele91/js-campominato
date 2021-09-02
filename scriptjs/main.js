@@ -146,24 +146,24 @@ function(){
 
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
 var campo = document.getElementById("campo");
-var clickP =[];
+var clickP =[q];
 console.log(clickP);
 
 campo.addEventListener("click",
 function (event){
     var i = parseInt((event.target.innerHTML));
-        if(!clickP.includes(parseInt(i))){
+    if(!clickP.includes(parseInt(i))){
         
         clickP.push(parseInt(i));   
         }else{
         
         // return clickP;
         }
-        
+    
+        console.log(" il punteggio ", clickP);
     }
     );
 
-    console.log(" il punteggio ", clickP);
     
     
 
