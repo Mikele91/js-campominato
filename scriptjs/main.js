@@ -93,14 +93,17 @@ function(){
 
 
     //prendo i dati dal select per impostare il campo 
-    var livello = document.getElementById("livello").value
+    var livello = document.getElementById("livello").value;
+    
+    if(livello == "0"){
 
-    if(livello = "0"){
-        livello = 100;
-    }else if (livello = "1"){
-        livello = 80;
+        CreaQuadrato(100);
+    }else if (livello == "1"){
+
+        CreaQuadrato(81);
+
     }else{
-        livello = 50;
+        CreaQuadrato(49);
     }
 
     
@@ -108,7 +111,7 @@ function(){
 
     // CreaQuadrato()
 }
-
+)
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
