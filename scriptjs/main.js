@@ -48,21 +48,14 @@ function numeroRandom(min, max){
 }
 
 
+// pulire i campi o refresh
+var btRefresh = document.getElementById("refresh");
 
-//FUNZIONI
-// INCLUDS
-// function inArrey(arrey, elem){ 
-//     let cont = 0;
-//     let trovato = false;
-//     while(cont < arrey.length && trovato == false){
-//         if(arrey[cont] == elem){
-//              trovato == true; //oppure direttamente return true  e sotto return false senza creare variabile trovato
-//         }
-//         cont++;
-
-//     }
-//      return trovato; //return false
-// }
+btRefresh.addEventListener("click",
+function(){
+    document.getElementById("campo").innerHTML = "";
+}
+)    
 
 // GENERA QUADRATI 
 function CreaQuadrato(numero){
@@ -74,75 +67,60 @@ function CreaQuadrato(numero){
 
 let btnGenera = document.getElementById("genera");
 // var btRefresh = document.getElementById("refresh");
+var bombe =[];
 
-
+var caselle =0;
 btnGenera.addEventListener("click",
 function(){
 
     document.getElementById("campo").innerHTML = "";
-    var bombe =[];
-
-    // I numeri non possono essere duplicati.
-    while( bombe.length < 16  ){
-        var numeroGenerato = numeroRandom(1, 100);
-        if(!bombe.includes(numeroGenerato) ){   
-
-
-            bombe.push(numeroGenerato);
-        }
-    }
-    console.log(bombe);
-
-
 
     //prendo i dati dal select per impostare il campo 
     var livello = document.getElementById("livello").value;
     
     if(livello == "0"){
-
-        CreaQuadrato(100);
+        var  caselle = 100;
+        CreaQuadrato(caselle);
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo1");
 
     }else if (livello == "1"){
+        var  caselle = 81;
 
-        CreaQuadrato(81);
+        CreaQuadrato(caselle);
+
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo2");
 
 
     }else{
-        CreaQuadrato(49);
+        var  caselle = 49;
+
+        CreaQuadrato(caselle);
+
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.add("campo3");
 
-
-
     }
 
-    console.log(" livello difficolta " , livello)
+    
+    // I numeri non possono essere duplicati.
+    while( bombe.length < 16  ){
+        var numeroGenerato = numeroRandom(1, caselle);
+        if(!bombe.includes(numeroGenerato)){   
+            bombe.push(numeroGenerato);
+        }   
+    }
+    
+    console.log(" livello difficolta " , livello);
+    console.log(bombe);
 }
 );
 
 
-var btRefresh = document.getElementById("refresh");
-
-btRefresh.addEventListener("click",
-function(){
-
-    // pulire i campi o refresh
-    document.getElementById("campo").innerHTML = "";
-    //  document.getElementById("campo").classList.remove("campo1", "campo2", "campo3");
-
-    // resetto i campi (copiato da biglietto )
-    // var nome = document.getElementById("nome").value = " ";
-    // var km = parseInt( document.getElementById("km").value = " ") ;
-    // var fasciaEta = document.getElementById("fascia").selectedIndex = "0" ;
-}
-)           
 
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
 var campo = document.getElementById("campo");
@@ -151,23 +129,26 @@ console.log(clickP);
 
 campo.addEventListener("click",
 function (event){
-    var i = parseInt((event.target.innerHTML));
-
+    var numeroCliccato = parseInt((event.target.innerHTML));
     // se è una bomba bomb.includes(i)
     // alert() clickP.length
+    if(bombe.includes(numeroCliccato)){
+        document.getElementsByClassName("quadrato").classList.add("color");// why not?
+        alert("hai perso"); 
+    }else if((!clickP.includes(numeroCliccato)) || (!bombe.includes(numeroCliccato))){
+        
+        clickP.push(numeroCliccato);   
+        if(clickP.length == (caselle-16))
+            alert("Hai vinto hai finito il gioco")
+        }
+        console.log(caselle-16);
+        console.log(" il punteggio ", clickP);
+    }
+
+
     // se è una casella già cliccata clickP.includes(i)
     // altrimenti lo aggiungo all'array clickP
     // clickP.length == possibilita hai vintoooooo
-    if(!clickP.includes(parseInt(i))){
-        
-        clickP.push(parseInt(i));   
-        }else{
-        
-        // return clickP;
-        }
-    
-        console.log(" il punteggio ", clickP);
-    }
     );
 
 // La partita termina quando il giocatore clicca su un numero “vietato” o clicca su tutte le celle che non sono delle bombe.
