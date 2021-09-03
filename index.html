@@ -8,24 +8,37 @@
         <title>Document</title>
     </head>
     <body>
+        <h1>INDOVINA COSA HA CUCINATO LO CHEF?!</h1>
     <div class="from-game">
         <div class="from-game-dati">
-            <label for="nome">Nome Giocatore</label>
-            <input type="text" name ="nome" id="nome" placeholder="Inserisci nome giocatore">
-            
+            <div>
+                <label for="nome">Nome Giocatore</label>
+                <input type="text" name ="nome" id="nome" placeholder="Inserisci nome giocatore">   
+                <label for="livello">Scegli livello di difficlotà</label>
+                <select name="livello" id="livello">
+                    <option value="0">Principiante</option>
+                    <option value="1">Intermedio</option>
+                    <option value="2">Avanzato</option>
+    
+    
+                </select>
+            </div>
             <!-- lista difficoltà -->
-            <label for="livello">Scegli livello di difficlotà</label>
-            <select name="livello" id="livello">
-                <option value="0">Principiante</option>
-                <option value="1">Intermedio</option>
-                <option value="2">Avanzato</option>
+            <div class="bottoni">
 
+                <button id="genera"> Genera </button>
+                <button id="refresh"> Refresh</button>
+            </div>
 
-            </select>
-        
-            <button id="genera"> Genera </button>
-            <button id="refresh"> Refresh</button>
+            <label for="risposta">Piatto Vincente</label>
+            <input type="text" name ="risposta" id="risposta" placeholder="Inserisci la tua risposta">
 
+            <div id="risultato">
+                <div id="nome-giocatore">
+                    Giocatore
+                </div>
+
+            </div>
         
         </div>
     </div>

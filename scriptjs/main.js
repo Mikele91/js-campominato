@@ -60,7 +60,7 @@ function(){
 // GENERA QUADRATI 
 function CreaQuadrato(numero){
     for ( let i= 1; i <= numero; i++){
-        document.getElementById("campo").innerHTML+=`<div class="quadrato">${i}</div>`;
+        document.getElementById("campo").innerHTML+=`<div id = "quadrato" class="quadrato">${i}</div>`;
     }
 
 }
@@ -79,14 +79,14 @@ function(){
     var livello = document.getElementById("livello").value;
     
     if(livello == "0"){
-        var  caselle = 100;
+        caselle = 100;
         CreaQuadrato(caselle);
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo1");
 
     }else if (livello == "1"){
-        var  caselle = 81;
+        caselle = 81;
 
         CreaQuadrato(caselle);
 
@@ -96,7 +96,7 @@ function(){
 
 
     }else{
-        var  caselle = 49;
+        caselle = 49;
 
         CreaQuadrato(caselle);
 
@@ -124,19 +124,24 @@ function(){
 
 // In seguito il giocatore clicca sulle celle numerate (non può cliccare più volte sulla stessa cella)
 var campo = document.getElementById("campo");
+var quadrato = document.getElementById("quadrato");
+
 var clickP =[];
 console.log(clickP);
 
 campo.addEventListener("click",
 function (event){
     var numeroCliccato = parseInt((event.target.innerHTML));
+    var casellaCliccata = (event.target);
     // se è una bomba bomb.includes(i)
     // alert() clickP.length
     if(bombe.includes(numeroCliccato)){
-        document.getElementsByClassName("quadrato").classList.add("color");// why not?
+        casellaCliccata.classList.add("boom");// why not?
+        event.target.innerHTML = ""
         alert("hai perso"); 
-    }else if((!clickP.includes(numeroCliccato)) || (!bombe.includes(numeroCliccato))){
-        
+    }else if((!clickP.includes(numeroCliccato)) ){
+        casellaCliccata.classList.add("free")
+        event.target.innerHTML = ""
         clickP.push(numeroCliccato);   
         if(clickP.length == (caselle-16))
             alert("Hai vinto hai finito il gioco")
