@@ -80,30 +80,44 @@ function(){
     
     if(livello == "0"){
         caselle = 100;
+        var vittoria =document.getElementById("risposta").value
         CreaQuadrato(caselle);
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo1");
+        if(vittoria == "carbonara"){
+
+            alert("Hai vinto");
+        }
+        
 
     }else if (livello == "1"){
         caselle = 81;
-
+        var vittoria =document.getElementById("risposta").value
         CreaQuadrato(caselle);
 
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo2");
+        if(vittoria == "lasagna"){
 
+            alert("Hai vinto");
+        }
+        
 
     }else{
         caselle = 49;
-
+        var vittoria =document.getElementById("risposta").value
         CreaQuadrato(caselle);
 
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.add("campo3");
+        if(vittoria == "risopatatecozze"){
 
+            alert("Hai vinto");
+        }
+        
     }
 
     
@@ -138,13 +152,14 @@ function (event){
     if(bombe.includes(numeroCliccato)){
         casellaCliccata.classList.add("boom");// why not?
         event.target.innerHTML = ""
-        alert("hai perso"); 
+        alert("hai perso RITENTA!!!!!" +" hai preso la bomba dopo  " + clickP.length+ " tentativi"); 
+        location.reload();
     }else if((!clickP.includes(numeroCliccato)) ){
         casellaCliccata.classList.add("free")
         event.target.innerHTML = ""
         clickP.push(numeroCliccato);   
         if(clickP.length == (caselle-16))
-            alert("Hai vinto hai finito il gioco")
+            alert("Hai vinto hai finito il gioco"+ " sei riuscito a trovare tutte le  " + clickP.length +" caselle del pazzle ");
         }
         console.log(caselle-16);
         console.log(" il punteggio ", clickP);

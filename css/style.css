@@ -32,28 +32,39 @@ h1{
     display: flex;
     justify-content: center;
     color : white;
-    font-size: 18px;
-    
-    
+    font-size: 18px;        
 }
+
+#piatto-vincente{
+    text-align: center;
+}
+
 #campo{
-    background-image: url("https://blog.giallozafferano.it/albe/wp-content/uploads/2020/08/15FA1142-B5FA-410C-878B-2B8745B85F64_001-960x949.jpg");
     background-position: center;
     background-size: cover;
 }
 .campo1{
+    background-image: url("https://blog.giallozafferano.it/albe/wp-content/uploads/2020/08/15FA1142-B5FA-410C-878B-2B8745B85F64_001-960x949.jpg");
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     width: 1000px;
     margin: auto;
 }
 .campo2{
+    background-image: url("https://images.vanityfair.it/wp-content/uploads/2017/08/16004948/Landscape-Lasagna.jpg");
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     width: 900px;
     margin: auto;
 }
 .campo3{
+    background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/12/67/ef/69/la-tiella-di-riso-patate.jpg");
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     width: 700px;
