@@ -4,9 +4,7 @@
     box-sizing:border-box ;
 }
 body{
-    background-image: url("https://www.millionaire.it/wp-content/uploads/2016/11/13391383_1409484679078042_2808243981659030912_o.jpg");
     
-    background-size: cover;
 }
 h1{
     margin: 40px;
@@ -83,15 +81,8 @@ h1{
 
 }
 
-
-
-
 .free{
     opacity: 0.1;
-
-    /* background-image: url("https://img.freepik.com/free-photo/texture-grass-field_1232-251.jpg?size=626&ext=jpg&ga=GA1.2.2107986711.1630540800");
-    background-position: center;
-    background-size: cover; */
 }
 
 .boom{
@@ -99,4 +90,20 @@ h1{
     background-image: url("https://img.freepik.com/free-vector/word-pow-with-bomb-explosive_1308-3299.jpg?size=626&ext=jpg");
     background-position: center;
     background-size: cover;
+}
+.perso{
+    background-image: url("https://setelecomando.files.wordpress.com/2015/02/10911454_802886906448978_6777068636803128893_o.jpg");
+    
+    background-size: cover;
+}
+
+.contenitore{
+    
+    background-image: url("https://www.millionaire.it/wp-content/uploads/2016/11/13391383_1409484679078042_2808243981659030912_o.jpg");
+    height: 200vh;
+    background-size: cover;
+}
+.contenitore-perso{
+    display: none;
+    
 }
