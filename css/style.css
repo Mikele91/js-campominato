@@ -14,7 +14,7 @@ h1{
     font-size: 30px;
     text-align: center;
 }
-.bottoni button{
+.bottoni button, #risposta-piatto{
     padding: 10px;
     border: 2px solid brown;
     border-radius: 20px;

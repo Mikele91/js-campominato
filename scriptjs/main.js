@@ -66,6 +66,8 @@ function CreaQuadrato(numero){
 }
 
 let btnGenera = document.getElementById("genera");
+let btnRisposta = document.getElementById("risposta-piatto");
+
 // var btRefresh = document.getElementById("refresh");
 var bombe =[];
 
@@ -85,10 +87,19 @@ function(){
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo1");
-        if(vittoria == "carbonara"){
+        btnRisposta.addEventListener("click",
+        function(){
 
-            alert("Hai vinto");
+            if(vittoria == ("carbonara").toLowerCase()){
+    
+                alert("Hai vinto");
+                location.reload();
+            }else{
+                alert("Hai perso")
+                location.reload();
+            }
         }
+        )
         
 
     }else if (livello == "1"){
@@ -99,11 +110,19 @@ function(){
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo3");
         document.getElementById("campo").classList.add("campo2");
-        if(vittoria == "lasagna"){
+        btnRisposta.addEventListener("click",
+        function(){
 
-            alert("Hai vinto");
+            if(vittoria == ("lasagne").toLowerCase()){
+    
+                alert("Hai vinto");
+                location.reload();
+            }else{
+                alert("Hai perso")
+                location.reload();
+            }
         }
-        
+        )
 
     }else{
         caselle = 49;
@@ -113,10 +132,19 @@ function(){
         document.getElementById("campo").classList.remove("campo1");
         document.getElementById("campo").classList.remove("campo2");
         document.getElementById("campo").classList.add("campo3");
-        if(vittoria == "risopatatecozze"){
+        btnRisposta.addEventListener("click",
+        function(){
 
-            alert("Hai vinto");
+            if(vittoria == ("risopatatecozze").toLowerCase()){
+    
+                alert("Hai vinto");
+                location.reload();
+            }else{
+                alert("Hai perso")
+                location.reload();
+            }
         }
+        )
         
     }
 
